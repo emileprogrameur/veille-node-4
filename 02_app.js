@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const fs = require ('fs');
 app.use(express.static('public'));
 
 /*------------------------Route formulaire------------------------------*/
@@ -11,7 +12,7 @@ app.get('formulaire', function (req, res) {
 /*------------------------Route membres------------------------------*/
 app.get('membres', function (req, res) {
  console.log(__dirname);
- res.sendFile( __dirname + "/public/html" + "01_form.htm" );
+ res.sendFile( __dirname + "/public/data" + "membres.txt" );
 })
 
 /*------------------------Route /------------------------------*/
