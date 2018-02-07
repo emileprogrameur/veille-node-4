@@ -14,8 +14,9 @@ app.get('/membres', function (req, res) {
  console.log(__dirname);
  fs.readFile (__dirname + '/public/data/membres.txt', 'utf-8', (err, data) => {
  	if (err) throw err;
-	res.end(data);
- 	obj = JSON.parse ('[' + data + ']');
+ 	let liste = JSON.parse(data);
+ 	console.log(liste[2].nom)
+ 	res.end(data);
  })
  
 })
@@ -39,6 +40,15 @@ console.log('la route /traiter_get')
  courriel:req.query.courriel,
  telephone:req.query.telephone
  };
+
+ fs.readFile (__dirname + '/public/data/membres.txt', 'utf-8', (err, data) => {
+ 	if (err) throw err;
+ 	//Enregistre en tableau
+ 	let liste = JSON.parse(data);
+ 	//Ajoute la réponse
+ 	liste.push(reponse);
+ 	res.end(data);
+ });
 console.log(reponse);
  res.end(JSON.stringify(reponse));
 })
