@@ -39,6 +39,11 @@ app.get('/membres', function (req, res) {
         html += "<td>";
         html += liste[poulet].courriel
         html += "</td>";
+
+        html+= "<tr>";
+        html += "<td>";
+        html += liste[poulet].id
+        html += "</td>";
     }
 
     html += "</tbody></table></style>";
