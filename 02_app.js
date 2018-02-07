@@ -15,7 +15,18 @@ app.get('/membres', function (req, res) {
  fs.readFile (__dirname + '/public/data/membres.txt', 'utf-8', (err, data) => {
  	if (err) throw err;
  	let liste = JSON.parse(data);
- 	console.log(liste[2].nom)
+ 	let html = "<!DOCTYPE html>";
+    html+= "<html>";
+    html+= "<head>";
+    html+= "<style>table{background-color:tomato; color:white; border: solid 1px solid} td{border:dashed 1px white}</style>";
+    html+= "</head>";
+    html+="<table>"
+    html+="<thead><tr><th>Les membres</th></tr></thead>";
+    html+="<tbody>";
+
+
+    html += "</tbody></table></style>";
+
  	res.end(data);
  })
  
