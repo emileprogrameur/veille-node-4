@@ -24,8 +24,8 @@ app.get('/membres', function (req, res) {
     html+="<thead><tr><th>Les membres</th></tr></thead>";
     html+="<tbody>";
 
-    for(poulet of liste){
-        html+= "<tr>";
+    for(poulet in liste){
+        html += "<tr>";
         html += "<td>";
         html += liste[poulet].nom
         html += "</td>";
