@@ -12,7 +12,12 @@ app.get('/formulaire', function (req, res) {
 /*------------------------Route membres------------------------------*/
 app.get('/membres', function (req, res) {
  console.log(__dirname);
- res.sendFile( __dirname + "/public/data/" + "membres.txt" );
+ fs.readFile (__dirname + '/public/data/membres.txt', 'utf-8', (err, data) => {
+ 	if (err) throw err;
+	res.end(data);
+ 	obj = JSON.parse ('[' + data + ']');
+ })
+ 
 })
 
 /*------------------------Route /------------------------------*/
