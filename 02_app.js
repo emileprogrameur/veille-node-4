@@ -47,6 +47,9 @@ console.log('la route /traiter_get')
  	let liste = JSON.parse(data);
  	//Ajoute la réponse
  	liste.push(reponse);
+ 	fs.writeFile (__dirname + '/public/data/membres.txt', JSON.stringify (data), (err) => {
+ 		if (err) throw err;
+ 	})
  	res.end(data);
  });
 console.log(reponse);
