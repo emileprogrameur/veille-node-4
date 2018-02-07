@@ -4,15 +4,15 @@ const fs = require ('fs');
 app.use(express.static('public'));
 
 /*------------------------Route formulaire------------------------------*/
-app.get('formulaire', function (req, res) {
+app.get('/formulaire', function (req, res) {
  console.log(__dirname);
- res.sendFile( __dirname + "/public/html" + "01_form.htm" );
+ res.sendFile( __dirname + "/public/html/" + "01_form.htm" );
 })
 
 /*------------------------Route membres------------------------------*/
-app.get('membres', function (req, res) {
+app.get('/membres', function (req, res) {
  console.log(__dirname);
- res.sendFile( __dirname + "/public/data" + "membres.txt" );
+ res.sendFile( __dirname + "/public/data/" + "membres.txt" );
 })
 
 /*------------------------Route /------------------------------*/
@@ -30,8 +30,8 @@ console.log('la route /traiter_get')
 // on utilise l'objet req.query pour récupérer les données GET
  let reponse = {
  prenom:req.query.prenom,
- nom:req.query.nom
- courriel:req.query.courriel
+ nom:req.query.nom,
+ courriel:req.query.courriel,
  telephone:req.query.telephone
  };
 console.log(reponse);
