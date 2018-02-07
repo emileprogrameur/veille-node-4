@@ -29,6 +29,11 @@ app.get('/membres', function (req, res) {
         html += "<td>";
         html += liste[poulet].nom
         html += "</td>";
+
+        html+= "<tr>";
+        html += "<td>";
+        html += liste[poulet].telephone
+        html += "</td>";
     }
 
     html += "</tbody></table></style>";
