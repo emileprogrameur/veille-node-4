@@ -25,7 +25,10 @@ app.get('/membres', function (req, res) {
     html+="<tbody>";
 
     for(poulet of liste){
-        liste[poulet].nom
+        html+= "<tr>";
+        html += "<td>";
+        html += liste[poulet].nom
+        html += "</td>";
     }
 
     html += "</tbody></table></style>";
