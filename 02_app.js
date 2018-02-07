@@ -47,13 +47,11 @@ console.log('la route /traiter_get')
  	let liste = JSON.parse(data);
  	//Ajoute la réponse
  	liste.push(reponse);
- 	fs.writeFile (__dirname + '/public/data/membres.txt', JSON.stringify (data), (err) => {
+ 	fs.writeFile (__dirname + '/public/data/membres.txt', JSON.stringify (liste), 'utf-8', (err) => {
  		if (err) throw err;
+ 		res.end(JSON.stringify (liste));
  	})
- 	res.end(data);
  });
-console.log(reponse);
- res.end(JSON.stringify(reponse));
 })
 
 let server = app.listen(8080, function () {
