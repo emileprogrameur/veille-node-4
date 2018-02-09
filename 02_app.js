@@ -10,7 +10,7 @@ app.get('/formulaire', function (req, res) {
 })
 
 /*------------------------Route membres------------------------------*/
-app.get('/membres', function (req, res) {
+app.get('/membres', (req, res) => {
  console.log(__dirname);
  fs.readFile (__dirname + '/public/data/membres.txt', 'utf-8', (err, data) => {
  	if (err) throw err;
@@ -60,7 +60,7 @@ app.get('/', (req, res) => {
 })
 
 /*------------------------Route /traiter_get------------------------------*/
-app.get('/traiter_get', function (req, res) {
+app.get('/traiter_get', (req, res) =>{
  // Preparer l'output en format JSON
 
 console.log('la route /traiter_get')
