@@ -48,7 +48,7 @@ app.get('/membres', function (req, res) {
 
     html += "</tbody></table></style>";
 
- 	res.end(data);
+ 	res.end(html);
  })
  
 })
